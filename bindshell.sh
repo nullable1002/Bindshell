@@ -3,6 +3,7 @@
 # author: Nullable
 
 f_name="/tmp/bindshell_null"
+trap "rm $f_name" EXIT
 
 del_pipe () {
 	if test -f $f_name; then rm $f_name; fi
@@ -15,7 +16,6 @@ main () {
 }
 
 main $@
-trap "rm $f_name" EXIT
 
 
 
